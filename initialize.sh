@@ -2,7 +2,7 @@
 
 URRS=`git remote -v`
 
-URR=$(whiptail --title "欢迎使用git-tools" --inputbox "当前远程仓库地址$URRS \n请输入你要绑定的仓库地址" 10 60 Nones 3>&1 1>&2 2>&3)./t
+URR=$(whiptail --title "欢迎使用git-tools" --inputbox "当前远程仓库地址$URRS \n请输入你要绑定的仓库地址" 10 60 Nones 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 
