@@ -17,8 +17,14 @@ if [ $exitstatus = 0 ]; then
 	sleep 0.5
 	echo 60
 	sleep 0.6
-	echo 80	
-	pushstr=`git push -u origin master`
+	echo 80
+	source ~/ini/name.sh	
+	expect << EOF
+	spawn git push -u origin master
+	expect "Username for 'https://github.com': " {send "$USER\r"}
+	expect "Password for 'https://chenluzhong150394@github.com': " {send "$PASSWORD\r"}
+	expect "#" {send "exit\r"}
+EOF
 	echo 100
 	} | whiptail --gauge "Please wait while installing" 6 60 0
 	whiptail --title "执行状态" --msgbox " 执行成功!!" 10 60

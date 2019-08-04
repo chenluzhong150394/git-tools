@@ -4,7 +4,9 @@ OPTION=$(whiptail --title "git工具" --menu "\n    		请选择你要进行的gi
 "1" "上传" \
 "2" "拉取" \
 "3" "克隆" \
-"4" "生成ssh秘钥" 3>&1 1>&2 2>&3)
+"4" "生成ssh秘钥" \
+"5" "绑定远程仓库地址" \
+"6" "绑定git账号密码" 3>&1 1>&2 2>&3)
  
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
@@ -21,6 +23,13 @@ if [ $exitstatus = 0 ]; then
 	if [ $OPTION = 3 ]; then
 		./clone.sh	
 	fi
+	if [ $OPTION = 5 ]; then
+		./initialize.sh	
+	fi
+	if [ $OPTION = 6 ]; then
+		./users.sh	
+	fi
 else
     whiptail --title "消息通知" --msgbox "\n 		    欢迎下次使用,谢谢您的支持" 10 60
 fi
+
