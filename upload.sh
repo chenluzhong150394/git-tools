@@ -1,8 +1,15 @@
 #!/bin/bash
 
+DIR="$( cd "$( dirname "$0"  )" && pwd  )"
 
-dir_path='/home/chen/图片/git/'
-#cd $dir_path
+
+
+### 检测remote是否设置
+restr=`git remote -v`
+if [ "$restr" = '' ]; then
+	$DIR/initialize.sh
+else
+	
 
 DISTROS=$(whiptail --title "git-tools" --radiolist \
 "请选择你要上传的分支" 15 60 4 \
@@ -57,7 +64,10 @@ else
 fi
 
 
+
+	echo '123'
+fi
+
+
 ###>> /dev/null 2>&1使用这种方式,将命令执行后的输出结果清除
-
-
 

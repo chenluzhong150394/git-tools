@@ -1,7 +1,8 @@
 dir_path='/home/chen/我的shell脚本/github-tools'
 DIR="$( cd "$( dirname "$0"  )" && pwd  )"
 
-OPTION=$(whiptail --title "git工具" --menu "\n    		请选择你要进行的git操作" 15 60 6 \
+OPTION=$(whiptail --title "git工具" --menu "\n    		请选择你要进行的git操作" 19 70 7 \
+"0" "初始化仓库" \
 "1" "上传-push" \
 "2" "拉取-pull" \
 "3" "克隆-clone" \
@@ -19,7 +20,7 @@ if [ $exitstatus = 0 ]; then
 		cd $dir_path
 		whiptail --title "消息通知" --msgbox "\n 		    执行成功" 10 60
 		asdstr=`git pull`	
-		whiptail --title "消息通知" --msgbox "\n 		    $asdstr" 10 60		
+		whiptail --title "消息通知" --msgbox "\n 		    $asdstr" 10 60			
 	fi
 	if [ $OPTION = 3 ]; then
 		$DIR/clone.sh	
@@ -29,6 +30,10 @@ if [ $exitstatus = 0 ]; then
 	fi
 	if [ $OPTION = 6 ]; then
 		$DIR/users.sh	
+	fi
+	if [ $OPTION = 0 ]; then
+		intr=`git init`
+		whiptail --title "消息通知" --msgbox "\n 		    $intr" 10 60		
 	fi
 else
     whiptail --title "消息通知" --msgbox "\n 		    欢迎下次使用,谢谢您的支持" 10 60
