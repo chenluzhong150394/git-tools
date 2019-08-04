@@ -2,9 +2,9 @@ dir_path='/home/chen/我的shell脚本/github-tools'
 DIR="$( cd "$( dirname "$0"  )" && pwd  )"
 
 OPTION=$(whiptail --title "git工具" --menu "\n    		请选择你要进行的git操作" 15 60 6 \
-"1" "上传" \
-"2" "拉取" \
-"3" "克隆" \
+"1" "上传-push" \
+"2" "拉取-pull" \
+"3" "克隆-clone" \
 "4" "生成ssh秘钥" \
 "5" "绑定远程仓库地址" \
 "6" "绑定git账号密码" 3>&1 1>&2 2>&3)

@@ -1,9 +1,14 @@
-#! /bin/bash
-expect << EOF
-spawn git clone https://github.com/chenluzhong150394/notebook.git
-expect "Username for 'https://github.com': " {send "chenluzhong150394\r"}
-expect "Password for 'https://chenluzhong150394@github.com': " {send "chenshuo003\r"}
-expect "#" {send "exit\r"}
-EOF
-
-
+#!/bin/bash
+DISTROS=$(whiptail --title "Test Checklist Dialog" --radiolist \
+"What is the Linux distro of your choice?" 15 60 4 \
+"debian" "Venerable Debian" ON \
+"ubuntu" "Popular Ubuntu" OFF \
+"centos" "Stable CentOS" OFF \
+"mint" "Rising Star Mint" OFF 3>&1 1>&2 2>&3)
+ 
+exitstatus=$?
+if [ $exitstatus = 0 ]; then
+    echo "The chosen distro is:" $DISTROS
+else
+    echo "You chose Cancel."
+fi

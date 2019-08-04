@@ -1,5 +1,13 @@
 #!/bin/bash
 
+##查看脚本所在目录
+DIR="$( cd "$( dirname "$0"  )" && pwd  )"
+
+if [ ! -d "~/ini" ]; then
+ mkdir -p ~/ini
+fi
+
+
 
 
 source ~/ini/name.sh
@@ -29,4 +37,4 @@ else
 	whiptail --title "通知" --msgbox " 欢迎下次继续使用,谢谢!!" 10 60
 fi
 
-./menu.sh
+$DIR/menu.sh
