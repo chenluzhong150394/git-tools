@@ -1,0 +1,26 @@
+dir_path='/home/chen/图片/git/'
+
+OPTION=$(whiptail --title "git工具" --menu "\n    		请选择你要进行的git操作" 15 60 4 \
+"1" "上传" \
+"2" "拉取" \
+"3" "克隆" \
+"4" "生成ssh秘钥" 3>&1 1>&2 2>&3)
+ 
+exitstatus=$?
+if [ $exitstatus = 0 ]; then
+	if [ $OPTION = 1 ]; then
+		## 加载上传脚本
+		./upload.sh
+	fi
+	if [ $OPTION = 2 ]; then
+		cd $dir_path
+		whiptail --title "消息通知" --msgbox "\n 		    执行成功" 10 60
+		asdstr=`git pull`	
+		whiptail --title "消息通知" --msgbox "\n 		    $asdstr" 10 60		
+	fi
+	if [ $OPTION = 3 ]; then
+		./clone.sh	
+	fi
+else
+    whiptail --title "消息通知" --msgbox "\n 		    欢迎下次使用,谢谢您的支持" 10 60
+fi
