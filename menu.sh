@@ -1,6 +1,6 @@
 dir_path='/home/chen/图片/git/'
 
-OPTION=$(whiptail --title "git工具" --menu "\n    		请选择你要进行的git操作" 15 60 4 \
+OPTION=$(whiptail --title "git工具" --menu "\n    		请选择你要进行的git操作" 15 60 6 \
 "1" "上传" \
 "2" "拉取" \
 "3" "克隆" \
