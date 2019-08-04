@@ -25,6 +25,7 @@ else
     status=1
 fi
 
+echo $brech
 NAME=$(whiptail --title "欢迎使用git自动上传工具" --inputbox "请输入commit版本描述" 10 60 Nones 3>&1 1>&2 2>&3)
 
 exitstatus=$?
