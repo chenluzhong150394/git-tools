@@ -18,7 +18,9 @@ if [ $exitstatus = 0 ]; then
 	echo 60
 	sleep 0.6
 	echo 80
-	source ~/ini/name.sh	
+	source ~/ini/name.sh
+	echo $USER
+	echo $PASSWORD
 	expect << EOF
 	spawn git push -u origin master
 	expect "Username for 'https://github.com': " {send "$USER\r"}

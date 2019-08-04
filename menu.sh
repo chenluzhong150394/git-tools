@@ -1,4 +1,5 @@
-dir_path='/home/chen/图片/git/'
+dir_path='/home/chen/我的shell脚本/github-tools'
+DIR="$( cd "$( dirname "$0"  )" && pwd  )"
 
 OPTION=$(whiptail --title "git工具" --menu "\n    		请选择你要进行的git操作" 15 60 6 \
 "1" "上传" \
@@ -12,7 +13,7 @@ exitstatus=$?
 if [ $exitstatus = 0 ]; then
 	if [ $OPTION = 1 ]; then
 		## 加载上传脚本
-		./upload.sh
+		$DIR/upload.sh
 	fi
 	if [ $OPTION = 2 ]; then
 		cd $dir_path
@@ -21,13 +22,13 @@ if [ $exitstatus = 0 ]; then
 		whiptail --title "消息通知" --msgbox "\n 		    $asdstr" 10 60		
 	fi
 	if [ $OPTION = 3 ]; then
-		./clone.sh	
+		$DIR/clone.sh	
 	fi
 	if [ $OPTION = 5 ]; then
-		./initialize.sh	
+		$DIR/initialize.sh	
 	fi
 	if [ $OPTION = 6 ]; then
-		./users.sh	
+		$DIR/users.sh	
 	fi
 else
     whiptail --title "消息通知" --msgbox "\n 		    欢迎下次使用,谢谢您的支持" 10 60
