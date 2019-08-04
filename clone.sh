@@ -6,8 +6,7 @@ URK=$(whiptail --title "欢迎使用git工具" --inputbox "请输入要克隆的
 exitstatus=$?
 
 if [ $exitstatus = 0 ]; then
-	USER=$(whiptail --title "github登录" --inputbox "请输入您的github账号" 10 60 Peter 3>&1 1>&2 2>&3)
-	PASSWORD=$(whiptail --title "github登录" --passwordbox "请输入您的github密码" 10 60 3>&1 1>&2 2>&3)
+	source ~/ini/name.sh
 	expect << EOF
 	spawn git clone https://github.com/chenluzhong150394/notebook.git
 	expect "Username for 'https://github.com': " {send "$USER\r"}

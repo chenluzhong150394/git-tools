@@ -5,7 +5,7 @@ dir_path='/home/chen/图片/git/'
 #cd $dir_path
 
 
-NAME=$(whiptail --title "欢迎使用git自动上传工具" --inputbox "请输入commit版本描述" 10 60 Nones 3>&1 1>&2 2>&3)./t
+NAME=$(whiptail --title "欢迎使用git自动上传工具" --inputbox "请输入commit版本描述" 10 60 Nones 3>&1 1>&2 2>&3)
 
 exitstatus=$?
 
