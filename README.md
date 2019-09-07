@@ -25,5 +25,5 @@ chmod a+x register.sh
 ~~~shell
 clz
 ~~~
-
+![](https://raw.githubusercontent.com/chenluzhong150394/img/master/gitrool-1.png)
 
