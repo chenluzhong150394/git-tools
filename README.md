@@ -10,3 +10,7 @@ git clone https://github.com/chenluzhong150394/git-tools.git
 
 ## 然后使用cd　命令进入到目录下
 
+### ubuntu系统运行regester.sh这个脚本
+~~~shell
+./regester.sh
+~~~
