@@ -12,5 +12,18 @@ git clone https://github.com/chenluzhong150394/git-tools.git
 
 ### ubuntu系统运行regester.sh这个脚本
 ~~~shell
+## 先对register.sh这个文件添加执行权限
+chmod a+x register.sh
+
+# 然后执行这个脚本文件，会自动将这个工具箱安装到你的系统中，可以使用clz的命令在当前目录下调用这个工具
 ./regester.sh
 ~~~
+
+
+## 使用`clz`命令调用工具
+
+~~~shell
+clz
+~~~
+
+
